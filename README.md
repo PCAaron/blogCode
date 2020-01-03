@@ -1,6 +1,6 @@
 # 代码笔记
 
-Web全栈笔记，中对应的代码记录：https://github.com/PCAaron/PCAaron.github.io。   
+Web全栈笔记，中对应的代码记录：https://github.com/PCAaron/PCAaron.github.io 
 
 ## Vue.js实战
 
