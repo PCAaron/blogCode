@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'fontawesome-webfont';
+    src: url("./fonts/fontawesome-webfont.svg");
+}
+
+.bg{
+    background-color: #0f0;
+    font-family: 'fontawesome-webfont';
+}
