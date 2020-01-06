@@ -9,3 +9,5 @@ Web全栈笔记，中对应的代码记录：https://github.com/PCAaron/PCAaron.
 ## Node.js实战   
 
 ## webpack4入门到实战
+* webpack的基本用法：核心概念demo：
+  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner)
