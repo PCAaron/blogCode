@@ -10,4 +10,8 @@ Web全栈笔记，中对应的代码记录：https://github.com/PCAaron/PCAaron.
 
 ## webpack4入门到实战
 * webpack的基本用法：核心概念demo：
-  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner)
+  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner)      
+  
+* webpack的基本用法：常用配置：
+  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-basic](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-basic)
+  
