@@ -6,7 +6,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import './main.less'
+/*import './main.less'*/;
 import logo from './logo.jpg'
 
 class Index extends React.Component{

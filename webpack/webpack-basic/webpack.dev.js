@@ -5,13 +5,17 @@
  */
 const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    mode: 'production',
+    entry: {
+       index: './src/index.js',
+       search: './src/search.js'
+    },
     output: {
         path: path.resolve(__dirname,'dist'),
-        filename: 'bundle.js'
+        filename: '[name][chunkhash:8].js'
     },
     watch: true,
     watchOptions: {
@@ -40,10 +44,6 @@ module.exports = {
                     'less-loader'
                 ]
             },
-            /*{
-                test: /\.(png|svg|jpg|jpeg|gif)$/,
-                use: 'file-loader'
-            },*/
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
                 use: [
@@ -62,7 +62,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+       new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
         contentBase: './dist',

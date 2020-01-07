@@ -1,9 +1,22 @@
 @font-face {
-    font-family: 'fontawesome-webfont';
-    src: url("./fonts/fontawesome-webfont.svg");
+    /*font-family: 'fontawesome-webfont';
+    src: url("./fonts/fontawesome-webfont.svg");*/
 }
 
 .bg{
     background-color: #0f0;
-    font-family: 'fontawesome-webfont';
+    /*font-family: 'fontawesome-webfont';*/
+}
+body,
+h1,
+h2,
+p,
+ul{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #ffffff;
+    max-width: 1200px;
+    text-align: center;
 }
