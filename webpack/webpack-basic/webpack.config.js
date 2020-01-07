@@ -4,13 +4,20 @@
  * @Date: 2020-1-6-10:50
  */
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: 'bundle.js'
+    },
+    watch: true,
+    watchOptions: {
+      ignored: /node_modules/,
+      aggregateTimeout: 300,
+      poll: 1000
     },
     module: {
         rules: [
@@ -53,5 +60,12 @@ module.exports = {
                 use:'file-loader'
             }
         ]
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        contentBase: './dist',
+        hot: true
     }
 }

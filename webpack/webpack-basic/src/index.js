@@ -18,7 +18,7 @@ class Index extends React.Component{
                 </h1>
                 react text
                 <div className='main'>
-                    <h1 className='font'>字体</h1>
+                    <h1 className='font'>字体大小</h1>
                 </div>
             </div>
         )
