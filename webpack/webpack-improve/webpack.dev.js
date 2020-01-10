@@ -6,6 +6,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const htmlWebpackPlugin  = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -28,7 +29,8 @@ module.exports = {
                 test: /\.css$/,
                 loader: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'postcss-loader'
                 ]
             },
             {
@@ -36,7 +38,8 @@ module.exports = {
                 loader: [
                     'style-loader',
                     'css-loader',
-                    'less-loader'
+                    'less-loader',
+                    'postcss-loader'
                 ]
             },
             {
@@ -60,6 +63,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new htmlWebpackPlugin({
             template: path.join(__dirname, 'src/index.html'),
