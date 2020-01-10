@@ -30,6 +30,13 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
+                    {
+                        loader:'px2rem-loader',
+                        options: {
+                            remUnit: 75, //rem相对px的转换，1rem = 75px
+                            remPrecesion:8 // rem后的小数位数
+                        }
+                    }
                 ]
             },
             {
@@ -39,6 +46,13 @@ module.exports = {
                     'css-loader',
                     'less-loader',
                     'postcss-loader',
+                    {
+                        loader:'px2rem-loader',
+                        options: {
+                            remUnit: 75, //rem相对px的转换，1rem = 75px
+                            remPrecesion:8 // rem后的小数位数
+                        }
+                    }
                 ]
             },
             {
