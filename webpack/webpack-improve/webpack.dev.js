@@ -7,6 +7,47 @@ const path = require('path')
 const webpack = require('webpack')
 const htmlWebpackPlugin  = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const glob = require('glob')
+
+const setMPA = () => {
+    const entry  = {}
+    const htmlWebpackPlugins= []
+
+    // 获取entry入口文件
+    const entryFiles = glob.sync(path.join(__dirname,'./src/*/index.js'))
+
+    Object.keys(entryFiles).map(
+        (index) => {
+            const entryFile = entryFiles[index]
+            const match = entryFile.match(/src\/(.*)\/index\.js/)
+            const pageName = match && match[1]
+
+            entry[pageName] = entryFile
+            htmlWebpackPlugins.push(
+                new htmlWebpackPlugin({
+                    template: path.join(__dirname, `src/${pageName}/index.html`),
+                    filename: `${pageName}.html`,
+                    chunks: [pageName],
+                    inject: true,
+                    minify: {
+                        html5: true,
+                        collapsableWhitespace: true,
+                        preserveLineBreaks: false,
+                        minifyJS: true,
+                        minifyCSS: true,
+                        removeComments: true
+                    }
+                })
+            )
+        }
+    )
+
+    return {
+        entry,
+        htmlWebpackPlugins
+    }
+}
+const { entry, htmlWebpackPlugins } = setMPA()
 
 module.exports = {
     mode: 'development',
@@ -14,7 +55,7 @@ module.exports = {
     watchOptions: {
         ignored: /node_modules/,
     },
-    entry: './src/index.js',
+    entry: entry,
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: '[name]_[chunkhash:8].js'
@@ -79,15 +120,11 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new htmlWebpackPlugin({
-            template: path.join(__dirname, 'src/index.html'),
-            filename: 'index.html',
-            chunks: ['index'],
-            inject: true
-        })
-    ],
+    ].concat(htmlWebpackPlugins),
     devServer: {
         baseContent: './dist',
-        hot: true
-    }
+        hot: true,
+        open: true
+    },
+    devtool: 'source-map'
 }

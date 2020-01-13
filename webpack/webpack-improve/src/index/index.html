@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    ${ require('raw-loader!./meta.html') }
     <title>index</title>
-    <script type="text/javascript">
+    <script>${ require('raw-loader!babel-loader!../../node_modules/lib-flexible/flexible.js') }</script>
+    <!--<script type="text/javascript">
         ;(function(win, lib) {
             var doc = win.document;
             var docEl = doc.documentElement;
@@ -121,7 +123,7 @@
             }
 
         })(window, window['lib'] || (window['lib'] = {}));
-    </script>
+    </script>-->
 </head>
 <body>
 <div id="root"></div>
