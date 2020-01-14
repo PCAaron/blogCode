@@ -124,7 +124,6 @@ module.exports = {
     devServer: {
         baseContent: './dist',
         hot: true,
-        open: true
     },
     devtool: 'source-map'
 }

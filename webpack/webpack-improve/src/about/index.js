@@ -5,6 +5,7 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
+import '../common'
 
 class Index extends React.Component{
     render(){

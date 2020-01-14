@@ -5,6 +5,7 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
+import '../common'
 import './index.css'
 
 class Index extends React.Component{
