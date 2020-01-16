@@ -22,7 +22,7 @@ const setMPA = () =>{
                 new HtmlWebpackPlugin({
                     template: path.join(__dirname, `src/${pageName}/index.html`),
                     filename: `${pageName}.html`,
-                    chunks: [pageName],
+                    chunks: ['commons', pageName],
                     inject: true,
                     minify: {
                         html5: true,
@@ -106,5 +106,23 @@ module.exports = {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
         }),
-    ].concat(htmlWebpackPlugins)
+    ].concat(htmlWebpackPlugins),
+    optimization: {
+        splitChunks: {
+            minSize: 0,
+            minChunks:2,
+            cacheGroups: {
+                vendors: {
+                    test: /(react|react-dom)/,
+                    name: 'vendors',
+                    chunks: 'all'
+                },
+                defaults: {
+                    name:'commons',
+                    chunks: 'all', // all：所有引入的库进行分离；async：异步引入的库进行分离（默认）；initial：同步引入的库进行分离
+                    reuseExistingChunk: true,//如果一个模块已经被打包过了,那么再打包时就忽略这个上模块
+                }
+            }
+        }
+    }
 };
