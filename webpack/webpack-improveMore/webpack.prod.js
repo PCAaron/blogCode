@@ -112,11 +112,6 @@ module.exports = {
             minSize: 0,
             minChunks:2,
             cacheGroups: {
-                vendors: {
-                    test: /(react|react-dom)/,
-                    name: 'vendors',
-                    chunks: 'all'
-                },
                 defaults: {
                     name:'commons',
                     chunks: 'all', // all：所有引入的库进行分离；async：异步引入的库进行分离（默认）；initial：同步引入的库进行分离
