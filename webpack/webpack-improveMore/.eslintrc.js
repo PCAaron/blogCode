@@ -1,8 +1,11 @@
 module.exports = {
     "parser": "babel-eslint",
-    "extends": "airbnb",
+    "extends": [
+        'alloy',
+        'alloy/react',
+    ],
     "rules": {
-        "indent": ["error",2]
+        "indent": ["error",4]
     },
     "env": { // 当前生效环境
         "browser": true,

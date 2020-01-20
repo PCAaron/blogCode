@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const glob = require('glob')
 
 const setMPA = () =>{
@@ -103,6 +104,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new FriendlyErrorsWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name]_[contenthash:8].css'
         }),
@@ -110,6 +112,15 @@ module.exports = {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
         }),
+        function () {
+            this.hooks.done.tap('done', stats => {
+                if (stats.compilation.errors && stats.compilation.errors.length &&
+                    process.argv.indexOf('--watch') == -1) {
+                    console.log('build err')
+                    process.exit(1)
+                }
+            })
+        }
     ].concat(htmlWebpackPlugins),
     optimization: {
         splitChunks: {
@@ -123,5 +134,6 @@ module.exports = {
                 }
             }
         }
-    }
+    },
+    stats: 'errors-only'
 };
