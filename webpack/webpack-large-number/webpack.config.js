@@ -3,12 +3,12 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = {
     mode: 'none',
     entry: {
-        "webpack-large-number": "./src/index.js",
-        "webpack-large-number.min": "./src/index.js"
+        "w-large-number": "./src/index.js",
+        "w-large-number.min": "./src/index.js"
     },
     output: {
         filename: "[name].js",
-        library: "WebpackLargeNumber", // 指定库的全局变量
+        library: "WLargeNumber", // 指定库的全局变量
         libraryExport: "default", // 
         libraryTarget: "umd" // 支出库引入的方式
     },

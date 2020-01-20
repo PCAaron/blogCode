@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV == 'production') {
-    module.exports = requier('./dist/webpack-large-number.min.js')
+    module.exports = requier('./dist/w-large-number.min.js')
 } else {
-    module.exports = require('./dist/webpack-large-number')
+    module.exports = require('./dist/w-large-number')
 }
