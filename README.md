@@ -13,5 +13,10 @@ Web全栈笔记，中对应的代码记录：https://github.com/PCAaron/PCAaron.
   [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-beginner)      
   
 * webpack的基本用法：常用配置：
-  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-basic](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-basic)
+  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-basic](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-basic)        
+
+* webpack的进阶用法：
+  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-improve](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-improve)        
+  [https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-improveMore](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-improveMore)        
+  webpack打包大整数加法库:[https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-large-number](https://github.com/PCAaron/blogCode/tree/master/webpack/webpack-large-number)
   
