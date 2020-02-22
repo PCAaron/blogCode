@@ -1,17 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" :src="logo">
+
+    <div>
+      {{msg}}
+      <br/>
+      {{reversedMsg}}
+      {{now()}}
+      <Wat :test="'watch'"/>
+      <input v-model="value">
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import  Wat from './components/Watch'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+      Wat
+  },
+  data() {
+      return{
+          logo: require('./assets/logo.png'),
+          msg: 'hello vue',
+          value: ''
+      }
+  },
+  computed: {
+      // 计算属性的 getter
+      reversedMsg() {
+          // `this` 指向 vm 实例
+          return this.msg.split('').reverse().join('')
+      }
+  },
+  methods:{
+      now() {
+          return new Date().getTime()
+      },
   }
 }
 </script>
