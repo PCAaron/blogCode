@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lifecycle</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <template id="child">
+        <div>
+            <p id="component">组件</p>
+            <button @click="destroy">destroy</button>
+            <input type="text" v-model="msg">
+            <p>msg:{{msg}}</p>
+        </div>
+    </template>
+    <!--outerHTML-->
+    <h1>{{msg + '这是在outer HTML中的'}}</h1>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const vm =new Vue({
+        el:'#app',
+        data:{
+            msg:'hello vue'
+        },
+        // template: "<h1>{{msg +'这是在template中的'}}</h1>", // template
+        /*render(h) {     // render函数
+            return h('h1', 'this is createElement中的')
+        },*/
+        methods: {
+           destroy(){
+              this.$destroy()
+          },
+        },
+        beforeCreate(){
+            console.log('beforeCreate钩子')
+            console.log('$el',this.$el)//undefined
+            console.log('data',this.msg) //undefined
+            console.log('dom',document.getElementById("component"))//null
+        },
+        created(){
+            console.log('created钩子')
+            console.log('$el',this.$el)//undefined
+            console.log('data',this.msg) //hello vue
+            console.log('dom',document.getElementById("component"))//null
+        },
+        beforeMount(){
+            console.log('beforeMount钩子')
+            console.log('$el',this.$el)// <div id="app">...</div>
+            console.log('data',this.msg) //hello vue
+            console.log('dom',document.getElementById("component"))//null
+        },
+        mounted(){
+            console.log('mounted钩子')
+            console.log('data',this.msg) //hello vue
+            console.log('dom',document.getElementById("component"))//<p id="component">组件</p>
+        },
+        beforeUpdate(){
+            // 修改data或触发v-model等，能触发beforeUpdate钩子
+            console.log('beforeUpdate钩子')
+        },
+        update(){
+            console.log('update钩子')
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy钩子') // 触发destory方法，能触发beforeDestroy钩子
+        },
+        destory(){
+            console.log('destoryed钩子')
+        }
+    })
+</script>
+</body>
+</html>
