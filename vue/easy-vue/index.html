@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easy-vue</title>
+</head>
+<body>
+<div id="app">
+    {{test}}
+    <p v-text="test"></p>
+    <input v-model="test"/>
+    <button @click="handleClick">click</button>
+</div>
+
+<script src="./vue.js"></script>
+<script src="./compile.js"></script>
+<script>
+    const vm = new Vue({
+        el:'#app',
+        data:{
+            test:'abc',
+            foo:{
+                bar: 'bar'
+            }
+        },
+        methods: {
+            handleClick(){
+                console.log('click me')
+            }
+        }
+    })
+    console.log(vm.$data.test)
+    vm.$data.test='change'
+    console.log(vm.$data.test)
+</script>
+</body>
+</html>

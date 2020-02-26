@@ -90,7 +90,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname,'src/index.html'), // 使用模板
+            template: path.join(__dirname,'src/defineProperty.html'), // 使用模板
             filename: 'index.html',    //  打包后的文件名
             chunks: ['index'], // 打包后需要使用的chunk(文件)
             inject: true,

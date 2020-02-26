@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p>
+            hello
+            <span id="name"></span>
+        </p>
+    </div>
+</body>
+<script>
+    var obj = {}
+    Object.defineProperty(obj,'name',{
+        get(){
+            return document.getElementById('name').innerHTML
+        },
+        set(inner){
+            document.getElementById('name').innerHTML = inner
+        }
+    })
+    console.log(obj.name)
+    obj.name='set'
+    console.log(obj.name)
+</script>
+</html>
