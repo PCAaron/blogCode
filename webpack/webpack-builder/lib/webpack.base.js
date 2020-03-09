@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const glob = require('glob');
 const path = require('path');
 const HtmlWebpackPlguin = require('html-webpack-plugin');
@@ -113,7 +113,7 @@ module.exports = {
         new MiniCssExtractPlugin({ // css抽取
             filename: '[name]_[contenthash:8].css',
         }),
-        //new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new FriendlyErrorsWebpackPlugin(),
     ].concat(htmlWebpackPlugins),
     stats: 'errors-only',

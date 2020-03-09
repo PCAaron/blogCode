@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1583638845991" clover="3.2.0">
+  <project timestamp="1583638845991" name="All files">
+    <metrics statements="41" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2" elements="46" coveredelements="25" complexity="0" loc="41" ncloc="41" packages="1" files="4" classes="4"/>
+    <file name="webpack.base.js" path="D:\github\blogCode\webpack\webpack-builder\lib\webpack.base.js">
+      <metrics statements="22" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+    </file>
+    <file name="webpack.dev.js" path="D:\github\blogCode\webpack\webpack-builder\lib\webpack.dev.js">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+    </file>
+    <file name="webpack.prod.js" path="D:\github\blogCode\webpack\webpack-builder\lib\webpack.prod.js">
+      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="46" count="0" type="stmt"/>
+    </file>
+    <file name="webpack.ssr.js" path="D:\github\blogCode\webpack\webpack-builder\lib\webpack.ssr.js">
+      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

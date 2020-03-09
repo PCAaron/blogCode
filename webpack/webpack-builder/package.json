@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint ./lib --fix",
-    "jest:test": "jest"
+    "test:smoke": "jest tests/smoke",
+    "test:unit": "jest tests/unit --config jest.config.json"
   },
   "keywords": [],
   "author": "",
