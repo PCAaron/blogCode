@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom'
 import '../../common'
 import './index.css'
 import { a } from '../tree-shaking'
+import bg from '../images/bg.jpg'
 
 class Index extends React.Component{
     constructor(){
@@ -35,6 +36,7 @@ class Index extends React.Component{
                     Text ? <Text/> : null
                 }
                 <span onClick={this.loadText.bind(this)}>loadText</span>
+                <img src={bg}/>
             </div>
         )
     }

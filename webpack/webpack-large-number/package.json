@@ -1,5 +1,5 @@
 {
-  "name": "webpack-large-number",
+  "name": "webpack-big-number",
   "version": "1.0.0",
   "description": "一个大整数加法打包方法",
   "main": "index.js",

@@ -10,5 +10,10 @@ module.exports = {
     "env": { // 当前生效环境
         "browser": true,
         "node": true
+    },
+    "settings": {
+        react: {
+            version: "detect"
+        }
     }
 }
