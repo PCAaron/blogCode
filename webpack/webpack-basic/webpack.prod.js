@@ -12,7 +12,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     mode: 'production',
     entry: {
-       index: './src/index.js',
+       index: './src/demo.js',
        search: './src/search.js'
     },
     output: {

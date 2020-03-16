@@ -16,7 +16,7 @@ const setMPA = () => {
     const htmlWebpackPlugins= []
 
     // 获取entry入口文件
-    const entryFiles = glob.sync(path.join(__dirname,'./src/*/index.js'))
+    const entryFiles = glob.sync(path.join(__dirname,'./src/*/demo.js'))
 
     Object.keys(entryFiles).map(
         (index) => {

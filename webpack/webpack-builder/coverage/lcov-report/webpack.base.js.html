@@ -311,7 +311,7 @@ const ROOT = process.cwd();
 const setMPA = () =&gt; {
     const entry = {};
     const htmlWebpackPlugins = [];
-    const entryFiles = glob.sync(path.join(ROOT, './src/*/index.js'));
+    const entryFiles = glob.sync(path.join(ROOT, './src/*/demo.js'));
 &nbsp;
     Object.keys(entryFiles).map((index) =&gt; {
         const entryFile = entryFiles[index];
