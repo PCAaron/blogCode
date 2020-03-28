@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const {getAST, getDepeendencies, transform } = require('./Parser')
 
 module.exports = class Compiler {
@@ -44,7 +45,21 @@ module.exports = class Compiler {
     //文件输出:easypack提供的output输出路径
     emitFiles(){
         const outputPath = path.join(this.output.path,this.output.filename)
-        const bundle = ``
-
+        let modules = ''
+        this.modules.map((module)=>{
+            modules += `'${module.filename}': function (require, module, exports){${module.source}},`
+        })
+        const bundle = `(function(modules){
+            function require(filename){
+                var fn = modules[filename];
+                var module = { exports: {} };
+                
+                fn(require, module, module.exports);
+                return module.exports
+            }
+            require('${this.entry}')
+        })({${modules}})`
+        //console.log(bundle)
+        fs.writeFileSync(outputPath, bundle, 'utf-8')
     }
 }
