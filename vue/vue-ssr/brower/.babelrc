@@ -1,0 +1,9 @@
+{
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      // 让其支持动态路由的写法 const Foo = () => import('../components/Foo.vue')
+      "dynamic-import-webpack"    
+    ]
+  }
