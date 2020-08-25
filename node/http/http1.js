@@ -67,6 +67,19 @@ server.on('request',(req,res)=>{
             })
             break;
         case 'DELETE':
+            req.on('data',(buffer)=>{
+                const userStr = buffer.toString()
+                if(ContentType === 'application/json'){
+                    const deleter = JSON.parse(userStr)
+                    const user = users.find(u=>u.name === deleter.name)
+                    users.splice(user,1)
+                }
+                res.statusCode = 201
+            })
+            req.on('end',()=>{
+                res.statusCode = 200
+                res.end('delete success')
+            })
             break
     }
 })
