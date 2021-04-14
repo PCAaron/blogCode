@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easy-electron</title>
+</head>
+<body>
+    <button>按钮</button>
+    <button>按钮1</button>
+<script type="module">
+
+    // 在渲染进程中不能直接获取到主进程的数据
+    // console.log(username)
+
+    // 在渲染进程中也可以使用electron对象
+    const { remote, ipcRenderer } = require('electron')
+    // electron对象下面有的属性方法只能在主进程中使用，有的实在渲染进程中使用
+
+    // 如果需要访问到主进程中的数据，可以通过渲染进程中的electron子对象remote
+    console.log(remote)
+    // 该对象下面有个getGlobal,获取主进程中的全局数据
+
+    // IPC
+    const buttons = document.querySelectorAll('button')
+    buttons[0].onclick = function() {
+        ipcRenderer.send('getData', 'username')
+    }
+    ipcRenderer.on('sendData', function(e, data) {
+        console.log(data)
+    })
+    ipcRenderer.on('hello', function(e, data) {
+        console.log(e, data)
+    })
+
+    buttons[1].onclick = function() {
+        // 窗口间共享数据
+        localStorage.setItem('val', 'alex')
+    }
+</script>
+</body>
+</html>

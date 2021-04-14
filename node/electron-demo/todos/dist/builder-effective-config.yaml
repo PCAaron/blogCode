@@ -1,0 +1,17 @@
+directories:
+  output: ./dist
+  buildResources: build
+appId: com.miaov.app
+productName: todos
+win:
+  icon: ./source/logo.ico
+  target:
+    - nsis
+    - zip
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: ./source/logo.ico
+  installerHeader: ./source/header.bmp
+  license: ./source/license.txt
+electronVersion: 2.0.18
